@@ -1,104 +1,262 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
-<body>
+  <head>
+    <title>Js Purachai</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        font-size: 16px;
+      }
+      .w3-half img {
+        margin-bottom: -6px;
+        margin-top: 16px;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      .w3-half img:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar/menu -->
+    <nav
+      class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
+      style="z-index: 3; width: 300px; font-weight: bold"
+      id="mySidebar"
+    >
+      <br />
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-button w3-hide-large w3-display-topleft"
+        style="width: 100%; font-size: 22px"
+        >Close Menu</a
+      >
+      <div class="w3-container">
+        <h3 class="w3-padding-64">
+          <b>Purachai<br />Memakun</b>
+        </h3>
+      </div>
+      <div class="w3-bar-block">
+        <a
+          href="./index.html"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Home</a
+        >
+        <a
+          href="./java.html"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >Java Script</a
+        >
+        <a
+          href="./api.html"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white"
+          >API's</a
+        >
+        <a
+          href="#"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white w3-disabled"
+          >Waiting for update.</a
+        >
+        <a
+          href="#"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white w3-disabled"
+          >Waiting for update.</a
+        >
+        <a
+          href="#"
+          onclick="w3_close()"
+          class="w3-bar-item w3-button w3-hover-white w3-disabled"
+          >Waiting for update.</a
+        >
+      </div>
+    </nav>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="index.html" class="w3-bar-item w3-button">index</a>
-      <a href="java.html" class="w3-bar-item w3-button">java</a>
-      <a href="api.html" class="w3-bar-item w3-button">api</a>
+    <!-- Top menu on small screens -->
+    <header
+      class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding"
+    >
+      <a
+        href="javascript:void(0)"
+        class="w3-button w3-red w3-margin-right"
+        onclick="w3_open()"
+        >☰</a
+      >
+      <span>Purachai Memakun</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div
+      class="w3-overlay w3-hide-large"
+      onclick="w3_close()"
+      style="cursor: pointer"
+      title="close side menu"
+      id="myOverlay"
+    ></div>
+    <!-- Page content -->
+    <div class="w3-main  w3-animate-opacity" style="margin-left: 340px; margin-right: 40px">
+      <div class="w3-container" style="margin-top: 80px" id="showcase">
+        <h1 class="w3-jumbo"><b>Java Script</b></h1>
+        <h1 class="w3-xxxlarge w3-text-red"><b>By Purachai Memakun</b></h1>
+        <hr style="width: 50px; border: 5px solid red" class="w3-round" />
+      </div>
+      <div class="w3-container w3-margin-top w3-padding-64">
+        <br />
+        <hr />
+        <br />
+        <div class="w3-animate-opacity w3-center">
+          <h3>A - Z</h3>
+          <p id="demo">Hi</p>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <div class="w3-animate-opacity w3-center">
+          <h3>Click to Change</h3>
+          <p id="demo2">Hi</p>
+          <button onclick="changeChar()" class="w3-btn">Click Change</button>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <div class="w3-animate-opacity w3-center" class="w3-btn">
+          <h3>Find Square Area</h3>
+          <form style="display: inline-block">
+            <label for="x">แกน X</label>
+            <input id="x" type="number" />
+            <label for="y">แกน Y</label>
+            <input id="y" type="number" />
+          </form>
+          <button style="margin-top: 5px" onclick="square()" class="w3-btn">
+            Cal
+          </button>
+          <p id="answer"></p>
+        </div>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div class="w3-animate-opacity w3-center">
+        <h3>Grade Calculator</h3>
+        <label for="point">กรอกคะแนนของคุณ</label>
+        <input type="number" id="point" />
+        <button onclick="calculateGrade()" class="w3-btn">My Score</button>
+        <p id="overall"></p>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div class="w3-animate-opacity w3-center">
+        <h3>Login Function</h3>
+        <label for="username">Username</label>
+        <input id="username" type="text" />
+        <label for="password">Password</label>
+        <input id="password" type="text" />
+        <button onclick="login()" class="w3-btn">Login</button>
+      </div>
+      <!-- End page content -->
     </div>
-  </div>
-</div>
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16 w3-margin-top">
+      <p>
+        Edit by
+        <a
+          href="https://www.facebook.com/FieldmersTH/"
+          title="Purachai"
+          target="_blank"
+          class="w3-hover-text-green"
+          >Purachai Memakun CS RMU</a
+        >
+      </p>
+    </footer>
 
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
-  <div class="w3-container w3-margin-top w3-padding-64">
-    <h1>The Document Object</h1>
-    <h2>The get ElementById() Method</h2>  
-    <br><hr><br>
-    <p id="demo">Hi</p>
-    <br><hr><br>
-    <p id="demo2">Hi</p>
-    <button onclick="changeChar()">Click Change</button>
-    <br><hr><br>
-    <form>
-      <label for="x">แกน X</label>
-      <input id="x" type="number">
-      <label for="y">แกน Y</label>
-      <input id="y" type="number">
-    </form>
-    <button onclick="square()">Cal</button>
-    <p id="answer"></p>
+    <script>
+      function printAlphabetWithDelay(callback) {
+        let currentCharCode = 65; // ASCII code for 'A'
+        function printNextChar() {
+          const char = String.fromCharCode(currentCharCode);
+          document.getElementById("demo").innerHTML = char;
+          currentCharCode++;
+          if (currentCharCode <= 90) {
+            setTimeout(printNextChar, 1000);
+          } else {
+            callback();
+          }
+        }
+        printNextChar();
+      }
+      function onComplete() {
+        document.getElementById("demo").innerHTML =
+          "All characters are printed!";
+      }
+      printAlphabetWithDelay(onComplete);
 
-  </div>
-  <br><hr><br>
-    <label for="point">กรอกคะแนนของคุณ</label>
-    <input type="number" id="point">
-    <button onclick="calculateGrade()">My Score</button>
-    <p id="overall"></p>
+      function changeChar() {
+        document.getElementById("demo2").innerHTML = "Hello CS";
+      }
 
+      function square() {
+        var x = document.getElementById("x").value;
+        var y = document.getElementById("y").value;
 
-<!-- End page content -->
-</div>
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
+        document.getElementById("answer").innerText = x * y;
+      }
 
-<script>
-  function printAlphabetWithDelay(callback) {
-  let currentCharCode = 65; // ASCII code for 'A'
-  function printNextChar() {
-    const char = String.fromCharCode(currentCharCode);
-    document.getElementById('demo').innerHTML=(char)
-    currentCharCode++;
-    if (currentCharCode <= 90) {
-      setTimeout(printNextChar, 1000);
-    } else {
-      callback();
-    }
-  }
-  printNextChar();
-}
-  function onComplete() {
-    document.getElementById('demo').innerHTML= "All characters are printed!";
-  }
-  printAlphabetWithDelay(onComplete);
+      function calculateGrade() {
+        let point = document.getElementById("point").value;
 
-  function changeChar() {
-    document.getElementById('demo2').innerHTML= "Hello CS";
-  }
+        if (point >= 80) document.getElementById("overall").innerText = "A";
+        else if (point >= 70 && point < 80)
+          document.getElementById("overall").innerText = "B";
+        else if (point >= 60 && point < 70)
+          document.getElementById("overall").innerText = "C";
+        else if (point >= 50 && point < 60)
+          document.getElementById("overall").innerText = "D";
+        else document.getElementById("overall").innerText = "F";
+      }
 
-  function square(){
-    var x = document.getElementById('x').value;
-    var y = document.getElementById('y').value;
-    
-    document.getElementById('answer').innerText = x*y;
+      function login() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        if (username == "admin" && password == "admin") {
+          alert("Login สำเร็จ");
+        } else {
+          alert("Username หรือ Password ผิดพลาด");
+        }
+      }
+    </script>
 
-  }
+    <!-- Page Script -->
+    <script>
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
 
-  function calculateGrade() {
-    let point = document.getElementById('point').value;
-
-    if (point >= 80) document.getElementById('overall').innerText = 'A';
-    else if (point >= 70 && point < 80) document.getElementById('overall').innerText =  'B';
-    else if (point >= 60 && point < 70) document.getElementById('overall').innerText =  'C';
-    else if (point >= 50 && point < 60) document.getElementById('overall').innerText =  'D';
-    else document.getElementById('overall').innerText =  'F';
-    }
-  
-</script>
-
-</body>
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+    </script>
+  </body>
 </html>
