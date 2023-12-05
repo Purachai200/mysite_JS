@@ -115,7 +115,10 @@
     ></div>
 
     <!-- !PAGE CONTENT! -->
-    <div class="w3-main  w3-animate-opacity" style="margin-left: 340px; margin-right: 40px">
+    <div
+      class="w3-main w3-animate-opacity"
+      style="margin-left: 340px; margin-right: 40px"
+    >
       <!-- Header -->
       <div class="w3-container" style="margin-top: 80px" id="showcase">
         <h1 class="w3-jumbo"><b>API's</b></h1>
@@ -124,11 +127,35 @@
       </div>
 
       <!-- Content API's -->
-      <hr>
+
+      <!-- <hr>
       <div class="w3-animate-opacity w3-center w3-padding-24">
         <h1 style="font-size: 160px;">Page is Wait for update.</h1>
       </div>
-      <hr>
+      <hr> -->
+      <hr />
+      <div class="w3-center w3-padding-24">
+        <h3>This is a cat API's</h3>
+        <div class="w3-padding-64">
+          <p id="textCat"></p>
+        </div>
+        <button class="w3-btn w3-hover-border-light-green" onclick="CatFact()">
+          Click To Call Cat API's
+        </button>
+      </div>
+      <hr />
+      <div class="w3-center w3-padding-24">
+        <h3>Zip API's</h3>
+        <label for="zipCode">รหัสไปรษณีย์ในไทย : </label>
+        <input id="zipCode" type="text"/>
+        <div class="w3-padding-64">
+          <p id="locatiobZip"></p>
+        </div>
+        <button class="w3-btn w3-hover-border-light-green" onclick="ZipLine()">
+          คลิกเพื่อเช็ครหัสไปรษณีย์
+        </button>
+      </div>
+
       <!-- End page content -->
     </div>
 
@@ -156,6 +183,34 @@
       function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("myOverlay").style.display = "none";
+      }
+
+      function CatFact() {
+        fetch("https://catfact.ninja/fact")
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            let txt = "";
+            for (let x in data) {
+              txt += data[x] + " ";
+              document.getElementById("textCat").innerHTML = txt;
+            }
+
+            return data;
+          });
+      }
+
+      function ZipLine() {
+        let zipCode = document.getElementById("zipCode").value;
+        fetch(`https://api.zippopotam.us/th/${zipCode}`)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            let txt = JSON.stringify(data, null, 2);
+            document.getElementById("locatiobZip").innerHTML = txt;
+          });
       }
     </script>
   </body>

@@ -35,6 +35,11 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
+      .image-container {
+        width: 100%;
+        max-width: 800px; /* กำหนดขนาดสูงสุดของภาพ */
+        margin: 0 auto; /* จัดให้ภาพอยู่ตรงกลาง */
+      }
     </style>
   </head>
   <body>
@@ -120,7 +125,10 @@
     ></div>
 
     <!-- !PAGE CONTENT! -->
-    <div class="w3-main w3-animate-opacity" style="margin-left: 340px; margin-right: 40px">
+    <div
+      class="w3-main w3-animate-opacity"
+      style="margin-left: 340px; margin-right: 40px"
+    >
       <!-- Header -->
       <div class="w3-container" style="margin-top: 80px" id="showcase">
         <h1 class="w3-jumbo"><b>About Me</b></h1>
@@ -128,15 +136,17 @@
         <hr style="width: 50px; border: 5px solid red" class="w3-round" />
       </div>
       <!-- Content -->
-      <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Purachai Memakun From CS RMU.</h1>
+      <h1 class="w3-jumbo" style="text-shadow: 3px 3px 1px gray">
+        <span class="w3-hide-small">I'm</span> Purachai Memakun From CS RMU.
+      </h1>
       <h3>Photographer Hobbies and Computer Science Student.</h3>
-      <img
-        src="./picture/Profile.jpg"
-        alt=""
-        width="480"
-        height="545"
-        class="w3-border-0 w3-round-large"
-      />
+      <div class="image-container">
+        <img
+          src="./picture/Profile.jpg"
+          alt=""
+          class="w3-border-0 w3-round-large"
+        />
+      </div>
 
       <!-- End page content -->
     </div>
