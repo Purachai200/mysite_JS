@@ -30,16 +30,6 @@
       .w3-half img:hover {
         opacity: 1;
       }
-      body {
-        background-image: url("picture/architect.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .image-container {
-        width: 100%;
-        max-width: 800px; /* กำหนดขนาดสูงสุดของภาพ */
-        margin: 0 auto; /* จัดให้ภาพอยู่ตรงกลาง */
-      }
     </style>
   </head>
   <body>
@@ -131,27 +121,35 @@
     >
       <!-- Header -->
       <div class="w3-container" style="margin-top: 80px" id="showcase">
-        <h1 class="w3-jumbo"><b>About Me</b></h1>
-        <h1 class="w3-xxxlarge w3-text-red"><b>Purachai Memakun </b></h1>
+        <h1 class="w3-jumbo"><b>API's</b></h1>
+        <h1 class="w3-xxxlarge w3-text-red"><b>By Purachai Memakun</b></h1>
         <hr style="width: 50px; border: 5px solid red" class="w3-round" />
       </div>
-      <!-- Content -->
-      <h1 class="w3-jumbo" style="text-shadow: 3px 3px 1px gray">
-        <span class="w3-hide-small">I'm</span> Purachai Memakun From CS RMU.
-      </h1>
-      <h3>Photographer Hobbies and Computer Science Student.</h3><button class="w3-btn"><a href="https://myfirebasehosing-caa87.web.app/#home" style="text-decoration: none;">Go to My Resume</a></button>
-      <div class="image-container">
-        <img
-          src="./picture/Profile.jpg"
-          alt=""
-          class="w3-border-0 w3-round-large"
-        />
+
+      <!-- Content API's -->
+      <hr />
+      <div class="w3-center w3-padding-24">
+        <form
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbzCtQXBUPWIJc5gIsqDeZ0mj6lNlvGxB7AIEyRVSx9jqwb8ZGofpBi6bwdJM7QHXEdz2Q/exec"
+        >
+          <input name="Email" type="email" placeholder="Email" required />
+          <input name="Name" type="text" placeholder="Name" required />
+          <input name="Topic" type="text" placeholder="Topic" required />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <div class="w3-center w3-padding-24">
+        <iframe style="width: 100vh; height: auto;"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTQM_GB6zWHa_9AJRmZaswZJAB5o861FAwOCRYLuvYd4PAogFpKPPkd7nMO3eevZ2hvgd0xfuSuZ4cN/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+        ></iframe>
       </div>
       <!-- End page content -->
     </div>
 
+    <!-- W3.CSS Container -->
     <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-16 w3-margin-top">
+    <footer class="w3-center w3-black w3-padding-16" style="margin-top: 230px;">
       <p>
         Edit by
         <a
@@ -163,6 +161,7 @@
         >
       </p>
     </footer>
+
     <script>
       function w3_open() {
         document.getElementById("mySidebar").style.display = "block";
