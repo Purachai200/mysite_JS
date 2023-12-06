@@ -114,7 +114,10 @@
       id="myOverlay"
     ></div>
     <!-- Page content -->
-    <div class="w3-main  w3-animate-opacity" style="margin-left: 340px; margin-right: 40px">
+    <div
+      class="w3-main w3-animate-opacity"
+      style="margin-left: 340px; margin-right: 40px"
+    >
       <div class="w3-container" style="margin-top: 80px" id="showcase">
         <h1 class="w3-jumbo"><b>Java Script</b></h1>
         <h1 class="w3-xxxlarge w3-text-red"><b>By Purachai Memakun</b></h1>
@@ -173,6 +176,18 @@
         <label for="password">Password</label>
         <input id="password" type="text" />
         <button onclick="login()" class="w3-btn">Login</button>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div>
+        <canvas id="myChart1"></canvas>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div>
+        <canvas id="myChart2"></canvas>
       </div>
       <!-- End page content -->
     </div>
@@ -258,5 +273,80 @@
         document.getElementById("myOverlay").style.display = "none";
       }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById("myChart1");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [
+            {
+              label: "My friends favorite color.",
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 205, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: [
+                "rgb(255, 99, 132)",
+                "rgb(54, 162, 235)",
+                "rgb(255, 205, 86)",
+                "rgb(75, 192, 192)",
+                "rgb(153, 102, 255)",
+                "rgb(255, 159, 64)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      fetch('https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-yearly-average-temperature.json')
+          .then(response => response.json())
+          .then(data => {
+              const countries = data.map(entry => entry.country);
+              const temperatures = data.map(entry => entry.temperature);
+
+              const ctx = document.getElementById('myChart2').getContext('2d');
+              new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels: countries,
+                      datasets: [{
+                          label: 'Temperature (°C) In World',
+                          data: temperatures,
+                          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                          borderColor: 'rgba(85, 192, 192, 1)',
+                          borderWidth: 2
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          y: {
+                              beginAtZero: true
+                          }
+                      }
+                  }
+              });
+          })
+          .catch(error => console.error('Error fetching data:', error));
+  });
+</script>
+
   </body>
 </html>
