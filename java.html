@@ -171,15 +171,21 @@
       <br />
       <div class="w3-animate-opacity w3-center">
         <h3>Login Function</h3>
-        <label for="username">Username</label>
+        <label for="username">Username (user:admin)</label>
         <input id="username" type="text" />
-        <label for="password">Password</label>
+        <label for="password">Password (password:admin)</label>
         <input id="password" type="text" />
         <button onclick="login()" class="w3-btn">Login</button>
       </div>
       <br />
       <hr />
       <br />
+      <div class="w3-animate-opacity w3-center">
+        <label for="days">What Days</label>
+        <input id="days" type="number" />
+        <button onclick="dayToSec()">Cal Days to Second</button>
+        <p id="daySec"></p>
+      </div>
       <div>
         <canvas id="myChart1"></canvas>
       </div>
@@ -259,6 +265,13 @@
           alert("Username หรือ Password ผิดพลาด");
         }
       }
+
+      function dayToSec() {
+        let day = document.getElementById("days").value;
+        console.log(day)
+        const daysToSeconds = (day) => day * 24 * 60 * 60;
+        document.getElementById("daySec").innerText = ("เวลา " + day + " วัน = " + daysToSeconds(day) + " วินาที");
+      }
     </script>
 
     <!-- Page Script -->
@@ -314,39 +327,42 @@
       });
     </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-      fetch('https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-yearly-average-temperature.json')
-          .then(response => response.json())
-          .then(data => {
-              const countries = data.map(entry => entry.country);
-              const temperatures = data.map(entry => entry.temperature);
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch(
+          "https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-yearly-average-temperature.json"
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            const countries = data.map((entry) => entry.country);
+            const temperatures = data.map((entry) => entry.temperature);
 
-              const ctx = document.getElementById('myChart2').getContext('2d');
-              new Chart(ctx, {
-                  type: 'line',
-                  data: {
-                      labels: countries,
-                      datasets: [{
-                          label: 'Temperature (°C) In World',
-                          data: temperatures,
-                          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                          borderColor: 'rgba(85, 192, 192, 1)',
-                          borderWidth: 2
-                      }]
+            const ctx = document.getElementById("myChart2").getContext("2d");
+            new Chart(ctx, {
+              type: "line",
+              data: {
+                labels: countries,
+                datasets: [
+                  {
+                    label: "Temperature (°C) In World",
+                    data: temperatures,
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    borderColor: "rgba(85, 192, 192, 1)",
+                    borderWidth: 2,
                   },
-                  options: {
-                      scales: {
-                          y: {
-                              beginAtZero: true
-                          }
-                      }
-                  }
-              });
+                ],
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              },
+            });
           })
-          .catch(error => console.error('Error fetching data:', error));
-  });
-</script>
-
+          .catch((error) => console.error("Error fetching data:", error));
+      });
+    </script>
   </body>
 </html>
