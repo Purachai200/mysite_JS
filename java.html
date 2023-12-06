@@ -146,11 +146,16 @@
           <h3>Find Square Area</h3>
           <form style="display: inline-block">
             <label for="x">แกน X</label>
-            <input id="x" type="number" />
+            <input id="x" type="number" /><br /><br />
             <label for="y">แกน Y</label>
             <input id="y" type="number" />
           </form>
-          <button style="margin-top: 5px" onclick="square()" class="w3-btn">
+          <br />
+          <button
+            style="margin-top: 5px"
+            onclick="square()"
+            class="w3-btn w3-round"
+          >
             Cal
           </button>
           <p id="answer"></p>
@@ -161,9 +166,11 @@
       <br />
       <div class="w3-animate-opacity w3-center">
         <h3>Grade Calculator</h3>
-        <label for="point">กรอกคะแนนของคุณ</label>
-        <input type="number" id="point" />
-        <button onclick="calculateGrade()" class="w3-btn">My Score</button>
+        <label for="point">กรอกคะแนนของคุณ</label><br>
+        <input type="number" id="point" /><br /><br />
+        <button onclick="calculateGrade()" class="w3-btn w3-round">
+          My Score
+        </button>
         <p id="overall"></p>
       </div>
       <br />
@@ -172,18 +179,20 @@
       <div class="w3-animate-opacity w3-center">
         <h3>Login Function</h3>
         <label for="username">Username (user:admin)</label>
-        <input id="username" type="text" />
+        <input id="username" type="text" /><br /><br />
         <label for="password">Password (password:admin)</label>
-        <input id="password" type="text" />
-        <button onclick="login()" class="w3-btn">Login</button>
+        <input id="password" type="text" /><br />
+        <button onclick="login()" class="w3-btn w3-round">Login</button>
       </div>
       <br />
       <hr />
       <br />
       <div class="w3-animate-opacity w3-center">
-        <label for="days">What Days</label>
-        <input id="days" type="number" />
-        <button onclick="dayToSec()" class="w3-btn">Cal Days to Second</button>
+        <label for="days"><h3>What Days</h3></label><br />
+        <input id="days" type="number" /><br /><br />
+        <button onclick="dayToSec()" class="w3-btn w3-round">
+          Cal Days to Second
+        </button>
         <p id="daySec"></p>
       </div>
       <br />
@@ -191,9 +200,12 @@
       <hr />
       <br />
       <div class="w3-animate-opacity w3-center">
-        <label for="factorialFind">Number To Find Factorial</label>
-        <input id="factorialFind" type="number" />
-        <button onclick="findFac()" class="w3-btn">Print Factorial Number</button>
+        <label for="factorialFind"><h3>Number To Find Factorial</h3></label
+        ><br />
+        <input id="factorialFind" type="number" /><br /><br />
+        <button onclick="findFac()" class="w3-btn w3-round">
+          Print Factorial Number
+        </button>
         <p id="printFact"></p>
       </div>
       <br />
@@ -297,7 +309,8 @@
         };
 
         let number = document.getElementById("factorialFind").value;
-        document.getElementById("printFact").innerText = ("แฟคตอเรียลของ " + number + " คือ " + factorial(number));
+        document.getElementById("printFact").innerText =
+          "แฟคตอเรียลของ " + number + " คือ " + factorial(number);
       }
     </script>
 
