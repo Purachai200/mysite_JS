@@ -186,6 +186,19 @@
         <button onclick="dayToSec()">Cal Days to Second</button>
         <p id="daySec"></p>
       </div>
+      <br />
+      <br />
+      <hr />
+      <br />
+      <div class="w3-animate-opacity w3-center">
+        <label for="factorialFind">Number To Find Factorial</label>
+        <input id="factorialFind" type="number" />
+        <button onclick="findFac()">Print Factorial Number</button>
+        <p id="printFact"></p>
+      </div>
+      <br />
+      <hr />
+      <br />
       <div>
         <canvas id="myChart1"></canvas>
       </div>
@@ -268,9 +281,23 @@
 
       function dayToSec() {
         let day = document.getElementById("days").value;
-        console.log(day)
+        console.log(day);
         const daysToSeconds = (day) => day * 24 * 60 * 60;
-        document.getElementById("daySec").innerText = ("เวลา " + day + " วัน = " + daysToSeconds(day) + " วินาที");
+        document.getElementById("daySec").innerText =
+          "เวลา " + day + " วัน = " + daysToSeconds(day) + " วินาที";
+      }
+
+      function findFac() {
+        const factorial = (n) => {
+          if (n === 0 || n === 1) {
+            return 1;
+          } else {
+            return n * factorial(n - 1);
+          }
+        };
+
+        let number = document.getElementById("factorialFind").value;
+        document.getElementById("printFact").innerText = ("แฟคตอเรียลของ " + number + " คือ " + factorial(number));
       }
     </script>
 
